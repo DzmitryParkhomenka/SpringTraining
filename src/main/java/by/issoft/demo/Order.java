@@ -1,10 +1,15 @@
 package by.issoft.demo;
 
 public class Order {
+
     private final Integer orderNumber;
 
     public Order(Integer orderNumber) {
         this.orderNumber = orderNumber;
+    }
+
+    public Integer getOrderNumber() {
+        return orderNumber;
     }
 
     @Override
