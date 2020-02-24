@@ -1,13 +1,18 @@
 package by.issoft.demo;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class App {
 
     public static void main(String[] args) {
 
-        OrderValidator orderValidator = new OrderValidator();
-        orderValidator.setMinOrderNumber(122);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("app.xml");
 
-        OrderService orderService = new OrderService(orderValidator);
-        orderService.createOrder(new Order(123));
+        OrderService orderService1 = applicationContext.getBean(OrderService.class);
+
+        OrderService orderService2 = applicationContext.getBean(OrderService.class);
+
+        orderService.createOrder(new Order(124));
     }
 }

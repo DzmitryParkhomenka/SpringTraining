@@ -6,6 +6,8 @@ public class OrderService {
 
     public OrderService(OrderValidator orderValidator) {
         this.orderValidator = orderValidator;
+
+        System.out.println("OrderService is created");
     }
 
     public void createOrder(Order order) {

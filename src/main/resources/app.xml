@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="by.issoft.demo.OrderService">
+        <constructor-arg ref="orderValidator1"/>
+    </bean>
+
+    <bean id="orderValidator1" class="by.issoft.demo.OrderValidator">
+        <property name="minOrderNumber" value="124"/>
+    </bean>
+
+    <bean id="orderValidator2" class="by.issoft.demo.OrderValidator">
+        <property name="minOrderNumber" value="122"/>
+    </bean>
+
+
+</beans>
